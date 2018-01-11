@@ -25,6 +25,7 @@ Router.route('/')
         }
       })
     })
+    
 
     Router.route('/:productId')
       .get((req, res) => {
@@ -52,6 +53,16 @@ Router.route('/')
               res.json({ msg: `SUCCESSFULLY UPDATED: ${productId}`, data: updatedProduct})
             }
           })
+        }
+      })
+    })
+    .delete((req, res) => {
+      const productId = req.params.productId
+      Product.remove({ _id: productId}, (err, product) => {
+        if (err) {
+          res.json({ error: err})
+        } else {
+          res.json({ msg: `DELETED: ${productId}`, data: product})
         }
       })
     })
