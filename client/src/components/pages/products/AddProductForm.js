@@ -10,7 +10,8 @@ const style = {
     width: '50%'
   },
   formContainer: {
-    padding: 20
+    padding: 20,
+    width: '300px'
     
   }
 }
