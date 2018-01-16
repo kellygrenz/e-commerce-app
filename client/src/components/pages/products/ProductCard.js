@@ -42,6 +42,7 @@ const ProductCard = ({ name, price, img, category, _id, deleteProduct }) =>
       </CardContent>
       <CardActions>
           <Button raised color="primary" onClick={() => deleteProduct(_id)}>Delete</Button>
+          <Button raised color="primary" >View</Button>
       </CardActions>
 
     </Card>

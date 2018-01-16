@@ -4,7 +4,7 @@ import ProductCard from './ProductCard'
 
 const style = {
   container: {
-    border: '2px solid black',
+    border: 'none',
     display: 'flex',
     width: '90vw',
     justifyContent: 'space-between',
