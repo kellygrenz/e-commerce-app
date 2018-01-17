@@ -3,6 +3,8 @@ import About from '../pages/About'
 import Home from '../pages/Home'
 import AddProductContainer from '../pages/products/AddProductContainer'
 import ProductsContainer from '../pages/products/ProductsContainer'
+import ProductPage from '../pages/products/ProductPage'
+import SignUpContainer from '../pages/authentication/SignUpContainer'
 import {Route} from 'react-router-dom'
 
 
@@ -11,7 +13,7 @@ const style = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    background: '#DCC6E0',
+    background: '#455A64',
     padding: '20px'
   }
 }
@@ -22,6 +24,8 @@ const Main = ({ domainData }) =>
       <Route path='/about' component={About} />
       <Route path='/products' render={() => <ProductsContainer domainData={domainData} />} />
       <Route path='/add-products' component={AddProductContainer} />
+      <Route exact path='/product/:_Id' component={ProductPage} />
+      <Route path='/sign-up' component={SignUpContainer} />
   </main>
 
 export default Main

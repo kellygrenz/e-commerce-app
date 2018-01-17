@@ -3,17 +3,24 @@ import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 const style = {
+  container: {
+    display: 'flex',
+    width: '75vw',
+    marginLeft: '150px'
+  },
   link: {
     textDecoration: 'none',
     display: 'flex',
     color: '#fff',
     fontSize: '20px',
-    padding: '20px'
+    padding: '20px',
+    fontFamily: 'Oswald, sans-serif'
+    
   }
 }
 
 const NavItem = ({to, children, exact}) =>
-  <div >
+  <div style={style.container}>
     <NavLink style={style.link} to={to}>{children}</NavLink>
   </div>
 

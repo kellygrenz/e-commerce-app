@@ -7,11 +7,12 @@ import Card from 'material-ui/Card'
 
 const style = {
   container: {
-    width: '50%'
+    width: '300px'
   },
   formContainer: {
     padding: 20,
-    width: '300px'
+    width: '400px'
+    
     
   }
 }

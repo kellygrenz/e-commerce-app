@@ -6,7 +6,7 @@ const style = {
   container: {
     border: 'none',
     display: 'flex',
-    width: '90vw',
+    width: '80vw',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexWrap: 'wrap'

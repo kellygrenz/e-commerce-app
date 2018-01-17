@@ -2,11 +2,11 @@ import React from 'react'
 
 const style = {
   container: {
-    background: '#013243',
+    background: '#263238',
     padding: '20px'
   },
   text: {
-    fontFamily: 'Indie Flower, cursive',
+    fontFamily: 'Oswald, sans-serif',
     color: '#fff'
   }
 }
