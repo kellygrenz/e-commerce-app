@@ -12,7 +12,7 @@ const style = {
 
 const Header = () =>
   <div style={style.container}>
-    <img src="../images/logo.png" style={style.headerImg}/>
+    <img src="..../images/logo.png" style={style.headerImg}/>
     <NavItem exact to='/' style={style.link}> Home </NavItem>
     <NavItem to='/about' style={style.link}> About </NavItem>
     <NavItem to='/products' style={style.link}> Products </NavItem>
