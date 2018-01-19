@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 const style = {
   container: {
     display: 'flex',
-    width: '75vw',
-    marginLeft: '150px'
+    padding: '10px'
+    
   },
   link: {
     textDecoration: 'none',

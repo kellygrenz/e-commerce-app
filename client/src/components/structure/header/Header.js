@@ -6,9 +6,10 @@ import PropTypes from 'prop-types'
 const style = {
   container: {
     display: 'flex',
-    
     background: '#607D8B',
-    justifyContent: 'space-between'
+    justifyContent: 'flex-start'
+    
+    
   },
   headerImg: {
     width: '206px',
@@ -20,10 +21,12 @@ const style = {
 const Header = ({ domainData }) =>
   <div style={style.container}>
     <img src="images/logo_sm.png" style={style.headerImg}/>
-    <NavItem exact to='/' style={style.link}> Home </NavItem>
-    <NavItem to='/about' style={style.link}> About </NavItem>
-    <NavItem to='/products' style={style.link}> Products </NavItem>
-    <NavItem to='/add-products'> Add Products </NavItem>
+    
+      <NavItem exact to='/' style={style.link}> Home </NavItem>
+      <NavItem to='/about' style={style.link}> About </NavItem>
+      <NavItem to='/products' style={style.link}> Products </NavItem>
+      <NavItem to='/add-products'> Add Products </NavItem>
+    
     {domainData.loggedOut ? <NavItem to='/sign-up'> Sign Up Now! </NavItem> : null}
     {domainData.loggedOut ? <NavItem to='/login'> Log In </NavItem> : null }
     {domainData.loggedIn ? <HeaderLink onClick={domainData.logOutUser}> Log Out </HeaderLink> : null}
