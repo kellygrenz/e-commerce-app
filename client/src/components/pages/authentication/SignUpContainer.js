@@ -2,22 +2,23 @@ import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import SignUpForm from './SignUpForm'
 
-const style = {
-  container: {
-    display: 'flex',
-    width: '50%',
-    background: '#FF5722',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '5px'
-  }
-}
+// const style = {
+//   container: {
+//     display: 'flex',
+//     width: '50%',
+//     background: '#FF5722',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//     padding: '5px'
+//   }
+// }
 
 class SignUpContainer extends Component {
   state =  {
     firstName: undefined,
     lastName: undefined, 
-    email: undefined
+    email: undefined,
+    password: undefined
   }
 
   handleChange = (e) => this.setState({ [e.target.id]: e.target.value })
@@ -34,7 +35,7 @@ class SignUpContainer extends Component {
   render() {
     console.log(this.props)
     return (
-      <div style={style.container}>
+      <div>
         <SignUpForm 
           firstName={this.state.firstName}
           lastName={this.state.lastName}

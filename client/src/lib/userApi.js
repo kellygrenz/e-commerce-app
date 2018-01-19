@@ -17,9 +17,12 @@ const ajaxRequest = (uri, method, body) => {
 }
 
 const handleErrors = response => {
+  console.log(response)
   if (!response.ok) {
+    console.log('an error was found')
     return response.json()
       .then(({message, data}) => {
+        console.log(data, 'SIGN UP SUCCESS')
         const err = Error(message)
         Object.assign(err, data)
         err.status = response.status

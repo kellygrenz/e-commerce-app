@@ -15,7 +15,8 @@ const style = {
     padding: '20px',
     flexDirection: 'column',
     alignItems: 'center',
-    background: '#607D8B'
+    background: '#607D8B',
+    marginBottom: '10px'
   },
   label: {
     fontSize: '20px',
@@ -31,14 +32,16 @@ const style = {
   },
   button: {
     marginRight: '20px'
-    }
-
+  },
+  link: {
+    textDecoration: 'none'
+  }
 }
 
 
 const SignUpForm = ({firstName, lastName, email, handleChange, onSubmit}) =>
-  <form>
-      <div style={style.container}>
+  <form style={style.container}>
+      <div >
         <Card style={style.card} raised>
           <Typography style={style.label} type="headline" component="h2">
             First Name:
@@ -59,11 +62,19 @@ const SignUpForm = ({firstName, lastName, email, handleChange, onSubmit}) =>
           </Typography>
           <input style={style.input} type='text' id='email' onChange={handleChange}/>
         </Card>
+        
+        
+        <Card style={style.card} raised>
+          <Typography style={style.label} type='headline' component='h2'>
+            Password:
+          </Typography>
+          <input style={style.input} type='text' id='password' onChange={handleChange}/>
+        </Card>
 
       </div>
       <div>
         <Button onClick={onSubmit} raised  style={style.button}>Sign UP </Button>
-        <Button raised style={style.button}> <Link to='/'>Login</Link></Button>
+        <Button raised style={style.button}> <Link to='/login' style={style.link}>Login</Link></Button>
       </div>
   
   </form>

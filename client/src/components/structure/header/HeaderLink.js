@@ -1,7 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const HeaderLink = () =>
-  <a>link here</a>
+const HeaderLink = ({onClick, children}) =>
+  <a onClick={onClick}>{children}</a>
   
+HeaderLink.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired
+}
 
 export default HeaderLink
