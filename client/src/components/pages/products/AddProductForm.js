@@ -17,22 +17,27 @@ const style = {
     flexDirection: 'column',
     alignItems: 'center',
     background: '#607D8B',
-    marginBottom: '10px'
+    marginBottom: '10px',
+    width: '500px'
   },
   label: {
-    fontSize: '20px',
+    fontSize: '25px',
     fontFamily: 'Oswald, sans-serif',
-    color: '#fff'
+    color: '#cddc39',
+    textAlign: 'center'
   },
   input: {
     padding: '10px',
     fontSize: '17px',
     fontFamily: 'Oswald, sans-serif',
     color: '#333',
-    width: '90%'
+    width: '95%'
   },
   button: {
-    marginRight: '20px'
+    marginRight: '20px',
+    color: '#cddc39',
+    background: '#607D8B'
+    
   },
   link: {
     textDecoration: 'none'
@@ -44,17 +49,21 @@ const AddProductForm = ({ onChangeHandler, name, price, img, category, submitPro
   <form style={style.formContainer}>
      <div>
     <Card style={style.card}>
-      <Typography style={style.label} type='display1' gutterBottom> Add Product </Typography>
+      <Typography style={style.label} type='display1' gutterBottom> Add a New Product </Typography>
           
       <input style={style.input} type='text' placeholder='Product Name' onChange={onChangeHandler} id={'name'}/>
     </Card> 
 
     <Card style={style.card}>
-             <input style={style.input} type='text' placeholder='Price' onChange={onChangeHandler} id={'price'} />
-          
-             <input style={style.input} type='text' placeholder='Image URL' onChange={onChangeHandler} id={'img'}/>
-          
-             <input style={style.input} type='text' placeholder='Product Category' onChange={onChangeHandler} id={'category'}/>
+      <input style={style.input} type='text' placeholder='Price' onChange={onChangeHandler} id={'price'} />
+    </Card>   
+
+    <Card style={style.card}>  
+      <input style={style.input} type='text' placeholder='Image URL' onChange={onChangeHandler} id={'img'}/>
+    </Card> 
+
+    <Card style={style.card}>  
+       <input style={style.input} type='text' placeholder='Product Category' onChange={onChangeHandler} id={'category'}/>
     </Card>  
     </div>  
     <div>

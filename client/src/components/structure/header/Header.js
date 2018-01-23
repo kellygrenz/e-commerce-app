@@ -38,6 +38,7 @@ const Header = ({ domainData }) =>
       {domainData.loggedIn ? <HeaderLink onClick={domainData.logOutUser}> Log Out </HeaderLink> : null}
       {domainData.loggedIn ? <HeaderLink>  {domainData.user.local.email}</HeaderLink> : null}
     </div>
+  
     
   </div>
 
