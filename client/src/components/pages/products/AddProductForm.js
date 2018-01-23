@@ -7,41 +7,63 @@ import Card from 'material-ui/Card'
 
 const style = {
   container: {
-    width: '300px'
+    width: '500px',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '10px'
   },
-  formContainer: {
-    padding: 20,
-    width: '400px'
-    
-    
+  card: {
+    padding: '20px',
+    flexDirection: 'column',
+    alignItems: 'center',
+    background: '#607D8B',
+    marginBottom: '10px'
+  },
+  label: {
+    fontSize: '20px',
+    fontFamily: 'Oswald, sans-serif',
+    color: '#fff'
+  },
+  input: {
+    padding: '10px',
+    fontSize: '17px',
+    fontFamily: 'Oswald, sans-serif',
+    color: '#333',
+    width: '90%'
+  },
+  button: {
+    marginRight: '20px'
+  },
+  link: {
+    textDecoration: 'none'
   }
 }
 
 
 const AddProductForm = ({ onChangeHandler, name, price, img, category, submitProductToServer }) =>
-  <div style={style.container}>
-    <Card>
-      <form style={style.formContainer}>
-        <Typography type='display1' gutterBottom> Add Product </Typography>
-        <div>
+  <form style={style.formContainer}>
+     <div>
+    <Card style={style.card}>
+      <Typography style={style.label} type='display1' gutterBottom> Add Product </Typography>
           
-          <TextField label='Product Name' onChange={onChangeHandler} id={'name'}/>
-        </div>
-        <div>
-          <TextField label='Price' onChange={onChangeHandler} id={'price'} />
-        </div>
-        <div>
-          <TextField label='Product Image' onChange={onChangeHandler} id={'img'}/>
-        </div>
-        <div>
-          <TextField label='Product Category' onChange={onChangeHandler} id={'category'}/>
-        </div>
-        <Button raised disabled={ !name || !price || !img || !category } onClick={submitProductToServer}>
-          Submit
-        </Button>
-        </form>
-      </Card>
-  </div>
+      <input style={style.input} type='text' placeholder='Product Name' onChange={onChangeHandler} id={'name'}/>
+    </Card> 
+
+    <Card style={style.card}>
+             <input style={style.input} type='text' placeholder='Price' onChange={onChangeHandler} id={'price'} />
+          
+             <input style={style.input} type='text' placeholder='Image URL' onChange={onChangeHandler} id={'img'}/>
+          
+             <input style={style.input} type='text' placeholder='Product Category' onChange={onChangeHandler} id={'category'}/>
+    </Card>  
+    </div>  
+    <div>
+          <Button style={style.button} raised disabled={ !name || !price || !img || !category } onClick={submitProductToServer}>
+            Submit
+          </Button>
+     </div>     
+        
+  </form>
 
   AddProductForm.propTypes = {
     onChangeHandler: PropTypes.func.isRequired,
