@@ -9,14 +9,15 @@ const User = new Schema({
     password: { type: String, required: true}
     
   },
-  created: { type: Date, required: true}
+  created: { type: Date, required: true},
+  cart: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product'}]
 })
 
 User.methods.setUserData = function (requestBody) {
-  this.local.firstName = requestBody.firstName || this.local.firstName
-  this.local.lastName = requestBody.lastName || this.local.lastName
-  this.local.email = requestBody.email || this.local.email
-  this.local.password = requestBody.password || this.local.password
+  this.firstName = requestBody.firstName || this.firstName
+  this.lastName = requestBody.lastName || this.lastName
+  this.lemail = requestBody.email || this.email
+  this.password = requestBody.password || this.password
 }
 
 User.methods.setDate = function () {

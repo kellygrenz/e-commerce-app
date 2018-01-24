@@ -35,7 +35,7 @@ const Header = ({ domainData }) =>
     <div style={style.userLinks}>
       {domainData.loggedOut ? <NavItem to='/sign-up'> Sign Up Now! </NavItem> : null}
       {domainData.loggedOut ? <NavItem to='/login'> Log In </NavItem> : null }
-      {domainData.loggedIn ? <HeaderLink onClick={domainData.logOutUser}> Log Out </HeaderLink> : null}
+      {domainData.loggedIn ? <HeaderLink onClick={domainData.logoutUser}> Log Out </HeaderLink> : null}
       {domainData.loggedIn ? <HeaderLink>  {domainData.user.local.email}</HeaderLink> : null}
     </div>
   

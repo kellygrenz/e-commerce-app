@@ -70,8 +70,8 @@ componentDidMount () {
     const domainData = {
       ...this.state, 
       ...this.methods,
-      loggedIn: this.state.user !== null,
-      loggedOut: this.state.user === null
+      loggedIn: this.state.user != null,
+      loggedOut: this.state.user == null
     }
     return (
       this.state.isLoaded 
