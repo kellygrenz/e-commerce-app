@@ -32,11 +32,13 @@ const Header = ({ domainData }) =>
       <NavItem to='/about' style={style.link}> About </NavItem>
       <NavItem to='/products' style={style.link}> Products </NavItem>
       <NavItem to='/add-products'> Add Products </NavItem>
+      
     <div style={style.userLinks}>
       {domainData.loggedOut ? <NavItem to='/sign-up'> Sign Up Now! </NavItem> : null}
       {domainData.loggedOut ? <NavItem to='/login'> Log In </NavItem> : null }
       {domainData.loggedIn ? <HeaderLink onClick={domainData.logoutUser}> Log Out </HeaderLink> : null}
       {domainData.loggedIn ? <HeaderLink>  {domainData.user.local.email}</HeaderLink> : null}
+      {domainData.loggedIn ? <NavItem to='/cart'> Cart </NavItem> : null}
     </div>
   
     

@@ -8,7 +8,8 @@ class DataProvider extends Component {
   state = {
     isLoaded: false,
     products: [],
-    user: null
+    user: null,
+    cartReady: false
   }
 
   methods = {
@@ -42,15 +43,16 @@ class DataProvider extends Component {
         UserApi.loginUser(email, password)
           .then(user => {
             console.log(user)
-            this.setState({user})
+            // this.setState({user})
+            this.methods.getUser(user)
             return user
           }),
       
-          getUser: () =>
-          UserApi.getUser()
+          getUser: (user) =>
+          UserApi.getUser(user._id)
             .then(user => {
               // console.log('FOUND USER', user)
-              this.setState({ user: user })
+              this.setState({ user: user, cartReady: true })
               return user
             }),
     logoutUser: () => 
@@ -58,12 +60,31 @@ class DataProvider extends Component {
       .then(user => {
         console.log('USER LOGGED OUT', user)
         this.setState({ user: null})
-      })
+      }),
+    
+    addItemToCart: (productId) => {
+      if ( this.state.user != null ) {
+        $.ajax({
+          url: `/api/users/cart/${this.state.user._id}`,
+          method: 'PUT',
+          data: {product_id: productId}
+        }).done((response) => {
+          console.log(response)
+          console.log(this.state.products)
+          console.log(productId)
+          this.methods.getUser(this.state.user)
+        })
+      } else {
+        console.log('user must be logged in')
+      }
+    }
+    // removeItemFromCart: (productId) => 
+      
 }
 
 componentDidMount () {
     this.methods.getAllProducts()
-    this.methods.getUser()
+    // this.methods.getUser()
   }
 
   render () {

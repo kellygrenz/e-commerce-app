@@ -13,11 +13,11 @@ const style = {
   }
 }
 
-const ProductList = ({ products, deleteProduct }) => 
+const ProductList = ({ products, deleteProduct, addItemToCart }) => 
   <div style={style.container}>
     {
       products.map(product => {
-        return <ProductCard {...product} deleteProduct={deleteProduct}/>
+        return <ProductCard {...product} deleteProduct={deleteProduct} addItemToCart={addItemToCart}/>
 
       })
     }
