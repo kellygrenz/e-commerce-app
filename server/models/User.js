@@ -10,7 +10,9 @@ const User = new Schema({
     
   },
   created: { type: Date, required: true},
-  cart: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product'}]
+  cart: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product'}],
+  orders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
+
 })
 
 User.methods.setUserData = function (requestBody) {

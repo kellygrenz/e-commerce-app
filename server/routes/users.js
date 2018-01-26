@@ -7,6 +7,7 @@ Router.route('/')
   .get((req, res) => {
     User.find()
       .populate('cart')
+      .populate('orders')
       .exec((err, users) => {
         if (err) {
           res.json({ error: err })
@@ -91,6 +92,7 @@ Router.route('/')
       const userId = req.params.userId
       User.findById({_id: userId})
       .populate('cart')
+      .populate('orders')
       .exec((err, user) => {
         if (err) {
           res.json({ error: err})

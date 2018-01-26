@@ -2,13 +2,29 @@ import React from 'react'
 import CartCard from './CartCard'
 import PropTypes from 'prop-types'
 
-const CartList = ({cartProducts, cartReady }) =>
-  <div>
+const style = {
+  container: {
+    display: 'flex',
+    width: '90vw',
+    justifyContent: 'column',
+    alignItems: 'center'
+  },
+  heading: {
+    fontSize: '30px',
+    textAlign: 'center'
+  }
+}
+
+
+const CartList = ({cartProducts, cartReady, removeItemFromCart }) =>
+  <div style={style.container}>
+    <h2 style={style.heading}>Items in Your Cart: </h2>
     {
-      cartProducts.length > 0
+      cartReady
       ? cartProducts.map(product => 
          <CartCard 
           product={product}
+          removeItemFromCart={removeItemFromCart}
          />
          )
          : 'Cart is empty'
@@ -17,7 +33,8 @@ const CartList = ({cartProducts, cartReady }) =>
 
 CartList.propTypes = {
   cartProducts: PropTypes.object.isRequired,
-  cartReady: PropTypes.bool.isRequired
+  cartReady: PropTypes.bool.isRequired,
+  removeItemFromCart: PropTypes.func.isRequired
   
 }
 

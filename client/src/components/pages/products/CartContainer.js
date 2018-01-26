@@ -21,6 +21,7 @@ const CartContainer = ({ domainData }) =>
         ? <CartList
             cartProducts={domainData.user.cart}
             cartReady={domainData.cartReady}
+            removeItemFromCart={domainData.removeItemFromCart}
           />
         : 'you must be logged in'
         
